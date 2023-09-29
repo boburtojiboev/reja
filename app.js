@@ -1,7 +1,7 @@
 console.log("Web Serverni boshlash");
 const express = require("express");
 const app = express();
-// const http = require("http");
+
 const fs = require("fs");
 
 let user;
@@ -43,8 +43,5 @@ app.get('/', function(req, res) {
 }); 
 module.exports = app;
 
-// const server = http.createServer(app);
-// let PORT = 3000;
-// server.listen(PORT, function (){
-//     console.log(`The server is running successfully on port: ${PORT}, http://localhost:${PORT}`)
-// });
+
+
