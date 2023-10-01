@@ -11,7 +11,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
     }else {
         user = JSON.parse(data);
     }
-});  
+});      
 
 // MongoDB chaqirish
 const db = require("./server").db();
@@ -30,8 +30,17 @@ app.set("view engine", "ejs");
    
 // 4 Routing code
 app.post('/create-item', (req, res) => {
-    console.log(req.body);
-    res.json({test: "success" }); 
+    // console.log(req.body);
+    console.log("user entered /create-item");
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
+        if(err) {
+            console.log(err);
+            res.end("something went wrong");
+        } else {
+            res.end("successfully added");
+        }
+    });
 });
  
 app.get("/author", (req, res) =>{
@@ -39,9 +48,19 @@ app.get("/author", (req, res) =>{
 })
 
 app.get('/', function(req, res) {
-    res.render("reja");
-}); 
-module.exports = app;
+    console.log("user entered /");
+    db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+        if(err) {
+            console.log(err);
+            res.end("something went wrong");
+        }else {
+            res.render("reja", { items: data});
+        }
+    });
+});   
+module.exports = app;  
 
 
 

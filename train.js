@@ -1,12 +1,40 @@
+// 📌  F-Task: findDoublers function tuzing, unga faqat bitta string argument pass bolib, 
+  // agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
+// masalan: getReverse("hello") return true return qiladi
+
+// 1-usul
+console.log("1usul")
+function FindDuplicate(str) {
+  let arr = str.split("");
+  const hasDup = (arr) => arr.length !== new Set(arr).size;
+  console.log(hasDup(arr)); 
+}    
+ FindDuplicate("good");
+
+
+// 2-usul
+console.log("2-usul")
+function FindDuplicate1(str1) {
+  let arr1 = str1.split("");
+  const some = arr1.some((elem, index, arr) => arr.indexOf(elem) !== index);
+  console.log(some); 
+}    
+FindDuplicate1("hello");
+
+
+
+
+
+
 // task-E
 //  Shunday function tuzing, u bitta string argumentni qabul qilib osh stringni teskari qilib return qilsin.
 // masalan: getReverse("hello") return qilsin "olleh"
 
-function getReverse(str) {
-    let reverse = str.split('').reverse().join('');
-    console.log(reverse);
-  }
-  getReverse("WEB_DEVELOPMENT");
+// function getReverse(str) {
+//   let reverse = str.split('').reverse().join('');
+//   console.log(reverse);
+// }
+// getReverse("WEB_DEVELOPMENT");
 
 
 
