@@ -26,17 +26,17 @@
               autofocus
               action="/create-item"
               autocomplete="off"
-              class="form__box-input--space"
+              class="form-control mr-3"
               type="text"
               style="flex: 1"
-            />
+            class="form__box-input--space" />
             <button class="btn btn-primary" style="border-radius: 20px">Yangi Reja Qoshish</button>
           </div>
         </form>
       </div>
     
       
-      <ul id="item-list classlist-group pb-5">  
+      <ul id="item-list" class="list-group pb-5">  
         <% items.map(function(item) { %>  
          <li class="list-group-item kist-group-item-info d-flex align-items-center justify-content-between">
           <span class="item-text"><%=item.reja%></span>
@@ -51,5 +51,7 @@
       <button id="clean-all" class="btn btn-danger" style="border-radius: 20px;">Hamma Rejalarni O'chirish</button>
 
    </div>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="/browser.js"></script>
   </body>
 </html>
