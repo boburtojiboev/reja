@@ -1,25 +1,43 @@
+// 📌  H-Task: shunday function tuzing,
+// u string qabul qilib teskari qilib return qilsin.
+
+function getReverse(str) {
+  let reverse = str.split('').reverse().join('');
+  console.log(reverse);
+}
+getReverse("SIMON");
+
+
+
+
+
+
+
+
+
+
 // 📌  F-Task: findDoublers function tuzing, unga faqat bitta string argument pass bolib, 
   // agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
 // masalan: getReverse("hello") return true return qiladi
 
 // 1-usul
-console.log("1usul")
-function FindDuplicate(str) {
-  let arr = str.split("");
-  const hasDup = (arr) => arr.length !== new Set(arr).size;
-  console.log(hasDup(arr)); 
-}    
- FindDuplicate("good");
+// console.log("1usul")
+// function FindDuplicate(str) {
+//   let arr = str.split("");
+//   const hasDup = (arr) => arr.length !== new Set(arr).size;
+//   console.log(hasDup(arr)); 
+// }    
+//  FindDuplicate("good");
 
 
 // 2-usul
-console.log("2-usul")
-function FindDuplicate1(str1) {
-  let arr1 = str1.split("");
-  const some = arr1.some((elem, index, arr) => arr.indexOf(elem) !== index);
-  console.log(some); 
-}    
-FindDuplicate1("hello");
+// console.log("2-usul")
+// function FindDuplicate1(str1) {
+//   let arr1 = str1.split("");
+//   const some = arr1.some((elem, index, arr) => arr.indexOf(elem) !== index);
+//   console.log(some); 
+// }    
+// FindDuplicate1("hello");
 
 
 
